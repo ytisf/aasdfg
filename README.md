@@ -40,7 +40,11 @@ Usage: (will require webcam access!)
 ```python
 from aasdfg import GenerateSeed
 
-seed = GenerateSeed()
+seed = GenerateSeed(photo_count=1, folds=1, verbose=False, trigger=True)
+# photo_count = How many photos to take from the webcam. Will directly impact length of seed.
+# folds = How many times to fold the data. Will directly impact length of seed. The higher the fold, less data and less entropy. 
+# verbose = Print out the seed as it is generated.
+# trigger = Will raise exception if shannon entropy is not high enough. Setting this flag to False is NOT recommended. As for whatever reason entropy is not high enough, the seed will be returned as usual and no alerts will be raised.
 ```
 
 
