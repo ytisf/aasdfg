@@ -2,6 +2,9 @@
 
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=round)](https://github.com/ytisf/aasdfg/issues)
+[![Licence](https://img.shields.io/github/license/ytisf/aasdfg?style=for-the-badge)](./LICENSE)
+![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
+![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
 
 ![Logo](https://github.com/ytisf/aasdfg/raw/main/logo.png)
 
