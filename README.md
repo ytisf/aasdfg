@@ -1,14 +1,16 @@
 # aasdfg
 
-This project is meant to assist in creating a truly random, en-masse, random seed. 
+This project is meant to assist in creating a truly random, en-masse, cryptographically secure seed. 
 
 The name of the project is a play on the meaning of randomness. 
 
-The logic behind it is that at times, it is desireable to provide a truly random seed to a CSPRNG. However, is many cases, the seed used to generate the random seed is not truly random. This project aims to provide a way to generate a truly random seed, en-masse. Some solutions were attempted using mouse movements, temperature, datetime, keyboard and screen size. Some of these solutions are adequet, some are not, but it seems like generating a truly large seed (rules out user input, for example) and truly secure (rules out datetime, etc) has been an challenge.
+The logic behind it is that at times, it is desireable to provide a truly random seed to a CSPRNG. However, is many cases, the seed used to generate the random seed is not truly random. This project aims to provide a way to generate a truly random seed, en-masse. Some solutions were attempted using mouse movements, components' temperature, datetime, keyboard and screen size. Some of these solutions are adequet, some are not, but it seems like generating a truly large seed (rules out user input, for example) and truly secure (rules out datetime, etc) has been an challenge.
 
 This small script aims at capturing several photos from a camera, and then using the image data to generate a truly random seed. The script is written in Python, and uses the OpenCV library to capture images from a camera. The script then uses the image data to generate a truly random seed. It will then XOR least significant bits of the image data for all channels (giving more significance to noise and other almost impossible to predict artifacts) and then "fold" the data with additional XOR to derrive at a large seed. 
 
-Our tests persistently show over 0.99999 factors on the Shannon Entropy scale, which is a very high level of entropy.
+The idea is to enhance the noise effects of the optical sensor, and then use the image data to generate a truly random seed. Image randomness is relatively high and unpredictable. Elements such as dust particles, light, reflection, air pressure, moisture, sensor noise and other artifacts are the ones this script aims to capture and magnify. The image itself is of no value. As long as the sensor is not completely covered or completely exposed, entropy of the data should be high on the Shannon scale.
+
+Our tests consistently show over 0.99999 factors on the Shannon Entropy scale, which is a very high level of entropy.
 
 ## Measurements
 
