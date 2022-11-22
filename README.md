@@ -1,16 +1,23 @@
 # aasdfg
 
+[![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
+[![Contributions Welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=round)](https://github.com/ytisf/aasdfg/issues)
+
+![Logo](https://github.com/ytisf/aasdfg/raw/main/logo.png)
+
 This project is meant to assist in creating a truly random, en-masse, cryptographically secure seed. 
 
 The name of the project is a play on the meaning of randomness. 
 
-The logic behind it is that at times, it is desireable to provide a truly random seed to a CSPRNG. However, is many cases, the seed used to generate the random seed is not truly random. This project aims to provide a way to generate a truly random seed, en-masse. Some solutions were attempted using mouse movements, components' temperature, datetime, keyboard and screen size. Some of these solutions are adequet, some are not, but it seems like generating a truly large seed (rules out user input, for example) and truly secure (rules out datetime, etc) has been an challenge.
+The logic behind it is that at times, it is desireable to provide a truly random seed to a CSPRNG. However, is many cases, the seed used to generate the random seed is not truly random. This project aims to provide a way to generate a truly random seed, en-masse. Some solutions were attempted using mouse movements, components' temperature, [datetime](https://pynative.com/python-random-seed/), [keyboard](https://www.redhat.com/sysadmin/creating-gpg-keypairs) and screen size. Some of these solutions are adequet, some are not, but it seems like generating a truly large seed (rules out user input, for example) and truly secure (rules out datetime, etc) has been an challenge.
 
 This small script aims at capturing several photos from a camera, and then using the image data to generate a truly random seed. The script is written in Python, and uses the OpenCV library to capture images from a camera. The script then uses the image data to generate a truly random seed. It will then XOR least significant bits of the image data for all channels (giving more significance to noise and other almost impossible to predict artifacts) and then "fold" the data with additional XOR to derrive at a large seed. 
 
-The idea is to enhance the noise effects of the optical sensor, and then use the image data to generate a truly random seed. Image randomness is relatively high and unpredictable. Elements such as dust particles, light, reflection, air pressure, moisture, sensor noise and other artifacts are the ones this script aims to capture and magnify. The image itself is of no value. As long as the sensor is not completely covered or completely exposed, entropy of the data should be high on the Shannon scale.
+The idea is to enhance the noise effects of the optical sensor, and then use the image data to generate a truly random seed. Image randomness is relatively high and unpredictable. Elements such as dust particles, light, reflection, air pressure, moisture, sensor noise and other artifacts are the ones this script aims to capture and magnify. The image itself is of no value. As long as the sensor is not completely covered or completely exposed, entropy of the data should be high on the [Shannon scale](https://towardsdatascience.com/what-is-shannons-entropy-5ad1b5a83ce1).
 
 Our tests consistently show over 0.99999 factors on the Shannon Entropy scale, which is a very high level of entropy.
+
+We know the code is not perfect, and we are open to suggestions and improvements [at any time](https://www.github.com/ytisf/aasdfg).
 
 ## Measurements
 
@@ -28,7 +35,12 @@ Our tests consistently show over 0.99999 factors on the Shannon Entropy scale, w
 
 ## Usage & Installation
 
-Installation:
+Installation from Github:
+```bash
+pip install -U git+https://github.com/ytisf/aasdfg.git
+```
+
+Installation (manual):
 ```bash
 cd /tmp
 git clone https://www.github.com/ytisf/aasdfg
